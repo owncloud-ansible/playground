@@ -1,0 +1,18 @@
+---
+mariadb_root_password: root
+
+mariadb_port: "3306"
+mariadb_bind_address: "127.0.0.0"
+
+mariadb_databases:
+  - name: owncloud
+    collation: utf8mb4_bin
+    encoding: utf8mb4
+
+mariadb_users:
+  - name: owncloud
+    host: localhost
+    password: owncloud
+    priv: "owncloud.*:ALL"
+
+...
