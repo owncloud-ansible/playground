@@ -39,6 +39,9 @@ steps:
     server: https://drone.owncloud.com
     token:
       from_secret: drone_token
+  when:
+    status:
+    - success
 
 - name: notify
   image: plugins/slack:1
@@ -61,6 +64,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: a91b6820bc64c88287a98fdf7bc88e07a69d7706120c1c9434362270957b89d9
+hmac: b6d57e1497000bd9017f3808a87a036eb65687d7a0cd426fe77626cb9e4d985a
 
 ...
