@@ -1,0 +1,66 @@
+---
+kind: pipeline
+name: documentation
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: publish
+  image: plugins/gh-pages:latest
+  settings:
+    pages_directory: _docs/
+    password:
+      from_secret: github_token
+    target_branch: docs
+    username:
+      from_secret: github_username
+
+trigger:
+  ref:
+  - refs/heads/master
+
+---
+kind: pipeline
+name: notification
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: docs
+  image: plugins/downstream
+  settings:
+    fork: true
+    repositories:
+    - owncloud-ansible/owncloud-ansible.github.io@source
+    server: https://drone.owncloud.com
+    token:
+      from_secret: drone_token
+
+- name: notify
+  image: plugins/slack:1
+  settings:
+    channel:
+      from_secret: slack_channel
+    webhook:
+      from_secret: slack_webhook_private
+
+trigger:
+  ref:
+  - refs/heads/master
+  - refs/tags/**
+  status:
+  - success
+  - failure
+
+depends_on:
+- documentation
+
+---
+kind: signature
+hmac: a91b6820bc64c88287a98fdf7bc88e07a69d7706120c1c9434362270957b89d9
+
+...
