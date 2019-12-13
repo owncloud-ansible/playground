@@ -2,8 +2,6 @@
 title: Testing
 ---
 
-# Testing
-
 ## Testing using Vagrant
 
 Vagrant makes it possible to run Ansible scripts inside a virtual machine (backed by VirtualBox).
