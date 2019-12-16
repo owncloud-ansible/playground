@@ -1,0 +1,12 @@
+---
+# For security reasons you should set a strong password
+# for the owncloud DB and root user!
+mariadb_root_password: root
+
+mariadb_users:
+  - name: owncloud
+    host: localhost
+    password: owncloud
+    priv: "owncloud.*:ALL"
+
+...

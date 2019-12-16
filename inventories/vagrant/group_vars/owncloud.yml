@@ -1,0 +1,28 @@
+---
+owncloud_version: "10.3.1"
+owncloud_fqdn: vagrant.owncloud.demo
+
+# If you would like to access your ownCloud by IP
+# you can add it to trusted domains.
+owncloud_trusted_domains:
+  - "{{ owncloud_fqdn }}"
+  - "{{ ansible_default_ipv4.address }}"
+  - "172.30.1.2"
+
+# Adjust these variable to the same values defined in
+# group_vars/database.yml
+owncloud_db_name: owncloud
+owncloud_db_user: owncloud
+owncloud_db_password: owncloud
+
+# You can also adjust the default ownCloud user.
+# For security reasons you should set a strong password!
+owncloud_admin_username: admin
+owncloud_admin_password: owncloud
+
+owncloud_log_timezone: "Etc/UTC"
+owncloud_log_dateformat: "Y-m-d H:i:s.u"
+
+php_date_timezone: "{{ owncloud_log_timezone }}"
+
+...
