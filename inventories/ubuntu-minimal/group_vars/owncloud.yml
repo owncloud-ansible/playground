@@ -27,5 +27,5 @@ php_date_timezone: "{{ owncloud_log_timezone }}"
 
 apache_vhosts:
   - servername: "{{ owncloud_fqdn }}"
-    documentroot: "/var/www/owncloud"
+    documentroot: "{{ owncloud_deploy_path }}"
 ...
