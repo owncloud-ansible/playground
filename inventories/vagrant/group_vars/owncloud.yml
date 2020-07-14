@@ -1,5 +1,5 @@
 ---
-owncloud_version: "10.3.1"
+owncloud_version: "10.4.1"
 owncloud_fqdn: vagrant.owncloud.demo
 
 # If you would like to access your ownCloud by IP
@@ -25,4 +25,7 @@ owncloud_log_dateformat: "Y-m-d H:i:s.u"
 
 php_date_timezone: "{{ owncloud_log_timezone }}"
 
+apache_vhosts:
+  - servername: "{{ owncloud_fqdn }}"
+    documentroot: "{{ owncloud_deploy_path }}"
 ...
