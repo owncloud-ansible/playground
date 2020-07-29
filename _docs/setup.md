@@ -1,6 +1,6 @@
-
-
-# Setup
+---
+title: Setup
+---
 
 These docs are work in progress so they will be incomplete. 
 
