@@ -1,9 +1,8 @@
----
-title: Setup
----
 
-# Work in Progress
-This is just a start for the documenation, so it will be incomplete. 
+
+# Setup
+
+These docs are work in progress so they will be incomplete. 
 
 ## CentOS 7 
 ### Requirements
