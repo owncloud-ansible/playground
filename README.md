@@ -6,10 +6,6 @@ This repository is intended as an entry point into an ownCloud deployment with A
 
 For more details, please have a look at the [documentation](https://owncloud-ansible.github.io/).
 
-### License
+## License
 
 This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
-
-### Maintainers
-
-[Robert Kaussow](https://github.com/xoxys/)
