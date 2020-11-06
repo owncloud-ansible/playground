@@ -1,0 +1,8 @@
+[database]
+db1
+
+[redis]
+redis1
+
+[owncloud]
+owncloud1
