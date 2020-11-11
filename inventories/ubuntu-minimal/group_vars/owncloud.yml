@@ -1,6 +1,7 @@
 ---
 owncloud_version: "10.5.0"
 owncloud_fqdn: ubuntu.owncloud.demo
+owncloud_deploy_path: /var/www/owncloud
 
 # If you would like to access your ownCloud by IP
 # you can add it to trusted domains.
