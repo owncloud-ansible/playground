@@ -1,13 +1,18 @@
 ---
 owncloud_version: "10.5.0"
-owncloud_fqdn: ubuntu.owncloud.demo
-owncloud_deploy_path: /var/www/owncloud
+owncloud_download_url: "https://download.owncloud.org/community/owncloud-complete-20200731.tar.bz2"
+owncloud_fqdn: suse.owncloud.demo
 
 # If you would like to access your ownCloud by IP
 # you can add it to trusted domains.
 owncloud_trusted_domains:
   - "{{ owncloud_fqdn }}"
   - "{{ ansible_default_ipv4.address }}"
+
+owncloud_apps:
+  - name: windows_network_drive
+owncloud_enterprise_license_key: ""
+owncloud_deploy_path: /srv/www/owncloud
 
 # Adjust these variable to the same values defined in
 # group_vars/database.yml
@@ -23,8 +28,10 @@ owncloud_admin_password: owncloud
 owncloud_log_timezone: "Etc/UTC"
 owncloud_log_dateformat: "Y-m-d H:i:s.u"
 
-
 php_date_timezone: "{{ owncloud_log_timezone }}"
+php_packages_extra:
+  - samba-client
+  - php7-smbclient
 
 apache_vhosts:
   - servername: "{{ owncloud_fqdn }}"

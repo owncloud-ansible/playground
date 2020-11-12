@@ -1,5 +1,5 @@
 ---
-owncloud_version: "10.4.1"
+owncloud_version: "10.5.0"
 owncloud_fqdn: ubuntu.owncloud.demo
 
 # If you would like to access your ownCloud by IP
