@@ -8,7 +8,7 @@ platform:
 
 steps:
 - name: publish
-  image: plugins/gh-pages:latest
+  image: plugins/gh-pages
   settings:
     pages_directory: _docs/
     password:
@@ -61,6 +61,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 443714ef977207ac10f0b7587028390412c99ecae83a131732d641078dcd7715
+hmac: 24b9e7f72494a57041628e9be8495aae337fba5a69a4c8c9c7e7ce0d629d4d3d
 
 ...
