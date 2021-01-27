@@ -1,5 +1,5 @@
 ---
-owncloud_version: "10.5.0"
+owncloud_version: "10.6.0"
 owncloud_fqdn: ubuntu.owncloud.demo
 
 # If you would like to access your ownCloud by IP
@@ -30,6 +30,7 @@ owncloud_apps:
   - name: twofactor_totp
   - name: files_mediaviewer
   - name: password_policy
+  - name: brute_force_protection
 
 # Only supported for ownCloud >= 10.2.1
 owncloud_encryption_enabled: True
@@ -38,8 +39,15 @@ owncloud_encryption_force_encrypt_all: False
 owncloud_log_timezone: "Etc/UTC"
 owncloud_log_dateformat: "Y-m-d H:i:s.u"
 
-
+php_default_version: "7.3"
 php_date_timezone: "{{ owncloud_log_timezone }}"
+php_packages_extra:
+  - centos-release-scl
+  - gcc
+  - make
+
+apache_packages_extra:
+  - centos-release-scl
 
 apache_vhosts:
   - servername: "{{ owncloud_fqdn }}"
