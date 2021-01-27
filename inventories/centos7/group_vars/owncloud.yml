@@ -41,6 +41,13 @@ owncloud_log_dateformat: "Y-m-d H:i:s.u"
 
 php_default_version: "7.3"
 php_date_timezone: "{{ owncloud_log_timezone }}"
+php_packages_extra:
+  - centos-release-scl
+  - gcc
+  - make
+
+apache_packages_extra:
+  - centos-release-scl
 
 apache_vhosts:
   - servername: "{{ owncloud_fqdn }}"
