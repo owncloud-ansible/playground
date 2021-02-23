@@ -1,7 +1,9 @@
 ---
-owncloud_version: "10.5.0"
+owncloud_version: "10.6.0"
 owncloud_fqdn: ubuntu.owncloud.demo
 owncloud_deploy_path: /var/www/owncloud
+owncloud_download_url: https://download.owncloud.org/community/owncloud-complete-20201216.tar.bz2
+php_default_version: "7.4"
 
 # If you would like to access your ownCloud by IP
 # you can add it to trusted domains.
