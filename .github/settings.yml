@@ -49,6 +49,16 @@ labels:
     description: Needs to be verified by a maintainer
 
 branches:
+  - name: master
+    protection:
+      required_pull_request_reviews: null
+      required_status_checks:
+        strict: false
+        contexts: []
+      enforce_admins: false
+      restrictions:
+        users: []
+        teams: []
   - name: docs
     protection:
       required_pull_request_reviews: null
