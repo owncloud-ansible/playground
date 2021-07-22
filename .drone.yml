@@ -7,25 +7,20 @@ platform:
   arch: amd64
 
 steps:
-- name: publish
-  image: plugins/gh-pages
-  settings:
-    pages_directory: _docs/
-    password:
-      from_secret: github_token
-    target_branch: docs
-    username:
-      from_secret: github_username
+- name: markdownlint
+  image: node:lts-alpine
+  commands:
+  - npm install -g markdownlint-cli
+  - markdownlint -p .gitignore 'README.md'
 
-- name: trigger
-  image: plugins/downstream
-  settings:
-    fork: true
-    repositories:
-    - owncloud-ansible/owncloud-ansible.github.io@source
-    server: https://drone.owncloud.com
-    token:
-      from_secret: drone_token
+- name: spellcheck
+  image: node:lts-alpine
+  commands:
+  - npm install -g spellchecker-cli
+  - spellchecker --files 'README.md' -d .dictionary -p spell indefinite-article syntax-urls frontmatter --frontmatter-keys title --no-suggestions
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
 
 trigger:
   ref:
@@ -61,6 +56,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 672d6c5421ef2698b0c2b6ffbb5cad33bfe5926737e14c1c62d72641cc13af39
+hmac: ddd13992259a6036bc4920d5d28b356c1d4b3145333e8a812a5ddd4d7f116dd8
 
 ...
