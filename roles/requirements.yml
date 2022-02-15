@@ -1,22 +1,20 @@
 ---
 - src: https://github.com/owncloud-ansible/mariadb
   scm: git
-  version: master
+  version: main
 
 - src: https://github.com/owncloud-ansible/apache
   scm: git
-  version: master
+  version: main
 
 - src: https://github.com/owncloud-ansible/php
   scm: git
-  version: master
+  version: main
 
 - src: https://github.com/owncloud-ansible/redis
   scm: git
-  version: master
+  version: main
 
 - src: https://github.com/owncloud-ansible/owncloud
   scm: git
-  version: master
-
-...
+  version: main
