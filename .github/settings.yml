@@ -56,6 +56,7 @@ branches:
         strict: false
         contexts: []
       enforce_admins: false
-      restrictions:
+      apps:
+          - renovate
         users: []
         teams: []
