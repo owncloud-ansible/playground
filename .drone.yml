@@ -40,9 +40,9 @@ steps:
     image: plugins/slack:1
     settings:
       channel:
-        from_secret: slack_channel
+        from_secret: rocketchat_chat_channel
       webhook:
-        from_secret: slack_webhook_private
+        from_secret: rocketchat_chat_webhook
 
 trigger:
   ref:
@@ -57,6 +57,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 0709778db603e81c1d0e63fa15925c4c03e860684bcabc3b00c8950219c27f3b
+hmac: 4308db877e5c1ab850e9d96f1ef4cc78727755748fb25be35e669b6f876ba9db
 
 ...
